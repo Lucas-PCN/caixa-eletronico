@@ -52,7 +52,7 @@ class TransacaoTest {
   @Test
   @DisplayName("24 - Testa o método instante está gerando o instante corretamente.")
   void retornarInstanteTest() {
-    assertEquals(getInstante();, transacao.retornarInstante(););
+    assertEquals(getInstante(), transacao.retornarInstante());
   }
 
 }

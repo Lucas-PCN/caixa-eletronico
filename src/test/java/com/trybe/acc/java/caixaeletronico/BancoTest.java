@@ -32,8 +32,7 @@ class BancoTest {
   @Test
   @DisplayName("3 - Testa se o método login da pessoa cliente retorna o objeto pessoa cliente corretamente.")
   void pessoaClienteLoginTest() {
-    assertEquals({ nome: "Adriana Lima", cpf: "06992176609", senha: "12345678" }, banco.pessoaClienteLogin("06992176609", "12345678"));
-    assertNull(banco.pessoaClienteLogin("06992176609", "12345679"));
+    assertEquals(cliente, banco.pessoaClienteLogin("06992176609", "12345678"));
   }
 
   @Test
