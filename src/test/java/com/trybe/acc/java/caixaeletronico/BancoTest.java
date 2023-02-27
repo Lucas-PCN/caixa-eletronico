@@ -73,7 +73,7 @@ class BancoTest {
     ByteArrayOutputStream saidaConsole = new ByteArrayOutputStream();
     System.setOut(new PrintStream(saidaConsole));
 
-    this.banco.mostrarExtrato(clienteLogado, 0);
+    this.banco.mostrarExtrato(cliente, 0);
     assertTrue(saidaConsole.toString().contains("Saque"));
     assertTrue(saidaConsole.toString().contains("1000.0"));
   }
