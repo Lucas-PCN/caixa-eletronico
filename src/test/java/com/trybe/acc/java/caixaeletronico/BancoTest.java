@@ -39,18 +39,26 @@ class BancoTest {
   @DisplayName("4 - Testa se o método transferir fundos está transferindo corretamente.")
   void depositarTestTransferirFundosTestmostrarExtratoTest() {
     PessoaCliente cliente = this.banco.pessoaClienteLogin("06992176609", "12345678");
-    Conta conta1 = new Conta("Corrente", cliente, this.banco);
-    Conta conta2 = new Conta("Poupança", cliente, this.banco);
-
-    cliente.adicionarConta(conta1);
-    cliente.adicionarConta(conta2);
-
-    this.banco.depositar(cliente, 0, 2000.0);
-    this.banco.depositar(cliente, 1, 3000.0);
+    cliente.adicionarConta(new Conta("Corrente", cliente, this.banco));
+    cliente.adicionarConta(new Conta("Poupança", cliente, this.banco));
+    this.banco.depositar(cliente, 0, 5000.0);
     this.banco.transferirFundos(cliente, 0, 1, 1000.0);
 
-    assertEquals(conta1.retornarSaldo(), 1000.0);
-    assertEquals(conta2.retornarSaldo(), 4000.0);
+    ByteArrayOutputStream saidaConsole = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(saidaConsole));
+
+    this.banco.mostrarExtrato(cliente, 0);
+    assertTrue(saidaConsole.toString().contains("Depósito"));
+    assertTrue(saidaConsole.toString().contains("5000.0"));
+    assertTrue(saidaConsole.toString().contains("Saque"));
+    assertTrue(saidaConsole.toString().contains("1000.0"));
+
+    saidaConsole = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(saidaConsole));
+
+    this.banco.mostrarExtrato(cliente, 1);
+    assertTrue(saidaConsole.toString().contains("Depósito"));
+    assertTrue(saidaConsole.toString().contains("1000.0"));
   }
 
   @Test

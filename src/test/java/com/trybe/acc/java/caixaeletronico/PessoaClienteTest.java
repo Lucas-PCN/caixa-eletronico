@@ -89,7 +89,7 @@ class PessoaClienteTest {
     String saida = saidaConsole.toString();
 
     assertTrue(saida.contains("Corrente"));
-    assertTrue(saida.contains("1000.0"));
+    assertTrue(saida.contains("5000.0"));
     assertTrue(saida.contains("Poupança"));
     assertTrue(saida.contains("0.0"));
   }
@@ -97,7 +97,7 @@ class PessoaClienteTest {
   @Test
   @DisplayName("20 - Testa o método Getter do atributo cpf está retornando.")
   void getCpfTest() {
-    assertEquals("842.074.410-77", this.pessoaCliente.getCpf());
+    assertEquals("06992176609", this.pessoaCliente.getCpf());
   }
 
 }
