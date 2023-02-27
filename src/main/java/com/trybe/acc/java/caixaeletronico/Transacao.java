@@ -11,6 +11,9 @@ public class Transacao {
   private String instante;
   private String descricao;
 
+  /**
+   * Construtor.
+   */
   public Transacao(double quantia, String descricao) {
     this.quantia = quantia;
     this.instante = retornarInstante();
@@ -25,6 +28,9 @@ public class Transacao {
     return this.descricao;
   }
 
+  /**
+   * Método retornarResumoTransacao.
+   */
   public String retornarResumoTransacao() {
     return String.format("%s - %s - %s", this.instante, this.quantia, this.descricao);
   }

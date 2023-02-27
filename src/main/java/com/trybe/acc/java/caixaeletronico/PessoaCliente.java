@@ -52,7 +52,7 @@ public class PessoaCliente {
 
   public boolean validarSenha(String senha) {
     return this.senha.equals(senha);
-   }
+  }
 
   /**
    * Método retornarResumoContas.
@@ -60,6 +60,6 @@ public class PessoaCliente {
   public void retornarResumoContas() {
     for (Conta conta : this.contas) {
       System.out.println(conta.retornarResumoConta());
-   }
+    }
   }
 }

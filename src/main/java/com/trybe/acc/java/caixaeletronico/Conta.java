@@ -27,7 +27,7 @@ public class Conta {
 
   public String getIdConta() {
     return this.idConta;
-   }
+  }
 
   public PessoaCliente getPessoaCliente() {
     return this.pessoaCliente;

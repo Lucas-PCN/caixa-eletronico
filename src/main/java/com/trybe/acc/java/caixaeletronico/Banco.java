@@ -65,7 +65,7 @@ public class Banco {
    * Método transferirFundos.
    */
   public void transferirFundos(
-    PessoaCliente pessoaCliente, int daConta, int paraConta, double quantia) {
+      PessoaCliente pessoaCliente, int daConta, int paraConta, double quantia) {
     this.sacar(pessoaCliente, daConta, quantia);
     this.depositar(pessoaCliente, paraConta, quantia);
   }

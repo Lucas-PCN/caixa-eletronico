@@ -82,12 +82,12 @@ public class CaixaEletronico {
               System.out.println("Opção inválida, escolha uma opção válida.");
             }
 
-	        // processando a escolha
-	        if (op == 1) {
+            // processando a escolha
+            if (op == 1) {
 
-	          int conta;
+            int conta;
 
-	          // pega o indice da conta para imprimir o extrato
+              // pega o indice da conta para imprimir o extrato
               do {
                 System.out.printf(
                     "Entre com o número (1-%d) para a conta\nque " + "o extrato será impresso: ",
