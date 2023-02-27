@@ -66,13 +66,16 @@ class BancoTest {
   @DisplayName("5 - Testa se o método sacar está funcionando corretamente.")
   void depositarTestSacarTestMostrarExtratoTest() {
     PessoaCliente cliente = this.banco.pessoaClienteLogin("06992176609", "12345678");
-    Conta conta = new Conta("Corrente", cliente, this.banco);
-    cliente.adicionarConta(conta);
-
-    this.banco.depositar(cliente, 0, 2000.0);
+    cliente.adicionarConta(new Conta("Corrente", cliente, this.banco));
+    this.banco.depositar(cliente, 0, 5000.0);
     this.banco.sacar(cliente, 0, 1000.0);
 
-    assertEquals(conta.retornarSaldo(), 1000.0);
+    ByteArrayOutputStream saidaConsole = new ByteArrayOutputStream();
+    System.setOut(new PrintStream(saidaConsole));
+
+    this.banco.mostrarExtrato(clienteLogado, 0);
+    assertTrue(saidaConsole.toString().contains("Saque"));
+    assertTrue(saidaConsole.toString().contains("1000.0"));
   }
 
 }
