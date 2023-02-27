@@ -25,7 +25,7 @@ class BancoTest {
   }
 
   @Test
-  @DisplayName("2 - Testa se o método adicionar pessoa cliente retorna o objeto pessoa cliente.")
+  @DisplayName("2 - Testa o método adicionar pessoa cliente retorna o objeto pessoa cliente.")
   void adicionarPessoaClienteTest() {
 	  assertNotNull(cliente);
   }
