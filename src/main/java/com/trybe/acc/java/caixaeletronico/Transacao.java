@@ -35,6 +35,9 @@ public class Transacao {
     return String.format("%s - %s - %s", this.instante, this.quantia, this.descricao);
   }
 
+  /**
+   * Método retornarInstante.
+   */
   public String retornarInstante() {
     LocalDateTime agora = LocalDateTime.now();
     DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");

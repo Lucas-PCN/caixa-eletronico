@@ -85,7 +85,7 @@ public class CaixaEletronico {
             // processando a escolha
             if (op == 1) {
 
-            int conta;
+              int conta;
 
               // pega o indice da conta para imprimir o extrato
               do {
